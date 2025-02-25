@@ -51,7 +51,10 @@ DIALOGFLOW_AGENTS = {
 
 SESSION_ID = str(uuid.uuid4())
 
-MONGODB_URI = os.getenv("MONGODB_URI", "mongodb+srv://crpunur:Chikchak1234@cluster0.f0sg3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGODB_URI = os.getenv("MONGODB_URI")
+
+if not MONGODB_URI:
+    raise ValueError("⚠️ MONGODB_URI environment variable is not set!")
 
 client = MongoClient(MONGODB_URI)
 db = client["chatbot_db"]
