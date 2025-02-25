@@ -9,4 +9,5 @@ logs/
 
 # Ignore IDE files
 .vscode/
-.idea/
+.idea/Credentials/
+Credentials/
